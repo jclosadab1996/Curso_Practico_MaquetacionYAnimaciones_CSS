@@ -5,6 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            height:100vh;
+            margin:0;
+            overflow:hidden; /* hace que lo que esta dentro del body no sobresalga */
+        }
+        .page {
+            position: relative;
+            height: 100vh;
+        }
+        .container{
+            z-index:1;
+            position: absolute;
+        }
+        .loader {
+            background: pink;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 3;
+
+            animation: loader 10s linear forwards;
+
+        }
+        @keyframes loader {
+            0%{
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            95%{
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            100%{
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .loader div {
+            background: yellowgreen;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 20px; 
+
+            transform: scale(0);
+
+            animation: scaling 1500ms ease-in-out infinite;
+        }
+        .loader div:nth-child(1){
+            animation-delay: 0.2s;
+        }
+        .loader div:nth-child(2){
+            animation-delay: 0.4s;
+        }
+        .loader div:nth-child(3){
+            animation-delay: 0.6s;
+        }
+
+        @keyframes scaling {
+            0%, 100%{
+                transform: scale(1.3);
+            }
+            50%{
+                transform: scale(.8);
+            }
+            
+        }
+    </style>
 </head>
 <body>
     <div class="page"></div>
