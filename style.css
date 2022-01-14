@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;100;300&display=swap');
+
+:root {
+  --primary-color: #ffd602;
+  --secundary-color: #d5040a;
+  --tertiary-color: #036cb6;
+}
+
 body {
+  font-family: 'Lato', sans-serif;
   height: 100vh;
   margin: 0;
   overflow: hidden; /* hace que lo que esta dentro del body no sobresalga */
@@ -7,11 +16,100 @@ body {
 .page {
   position: relative;
   height: 100vh;
+  width: 100%;
 }
 
 .container {
   z-index: 1;
   position: absolute;
+
+  display: grid;
+  grid-template-columns: 55% 45%;
+  grid-template-rows: 20% 50% 30%;
+  grid-template-areas:
+    'nav    aside'
+    'section  aside'
+    'footer  aside';
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  grid-area: nav;
+  display: flex;
+}
+
+.navbar__content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 0 80px;
+
+  animation: 2s navbar 0.5s ease-in-out;
+}
+
+@keyframes navbar {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.navbar__content img {
+  width: 50px;
+}
+
+.navbar__content ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  width: 450px;
+}
+
+.navbar__content ul li a {
+  text-decoration: none;
+  color: var(--secundary-color);
+  font-weight: 300;
+}
+
+.main-content {
+  display: flex;
+  grid-area: section;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+
+  animation: 2s main-content 0.5s ease-in-out;
+}
+
+.main-content p:first-child {
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0 0 -14px 44px;
+}
+
+.main-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 28px 0;
+}
+
+.main-content p:last-child {
+  font-weight: 100;
+  margin: 0;
+  width: 60%;
+}
+
+@keyframes main-content {
+  0% {
+    transform: translateY(-600px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .loader {
@@ -24,7 +122,7 @@ body {
   position: absolute;
   z-index: 3;
 
-  animation: loader 10s linear forwards;
+  animation: loader 0.2s linear forwards;
 }
 
 @keyframes loader {
@@ -69,9 +167,9 @@ body {
 @keyframes scaling {
   0%,
   100% {
-    transform: scale(1.3);
+    transform: scale(1);
   }
   50% {
-    transform: scale(0.8);
+    transform: scale(0.2);
   }
 }
