@@ -4,129 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
-    <style>
-        body{
-            height:100vh;
-            margin:0;
-            overflow:hidden; /* hace que lo que esta dentro del body no sobresalga */
-        }
-        .page {
-            position: relative;
-            height: 100vh;
-        }
-        .container{
-            z-index:1;
-            position: absolute;
-        }
-        .loader {
-            background: pink;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            z-index: 3;
-
-            animation: loader 10s linear forwards;
-
-        }
-        @keyframes loader {
-            0%{
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            95%{
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            100%{
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-        .loader div {
-            background: yellowgreen;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin: 20px; 
-
-            transform: scale(0);
-
-            animation: scaling 1500ms ease-in-out infinite;
-        }
-        .loader div:nth-child(1){
-            animation-delay: 0.2s;
-        }
-        .loader div:nth-child(2){
-            animation-delay: 0.4s;
-        }
-        .loader div:nth-child(3){
-            animation-delay: 0.6s;
-        }
-
-        @keyframes scaling {
-            0%, 100%{
-                transform: scale(1.3);
-            }
-            50%{
-                transform: scale(.8);
-            }
-            
-        }
-    </style>
 </head>
 <body>
-    <div class="page"></div>
-    <!-- main content -->
-    <section class="container">
-        <nav class="navbar">
-            <div class="navbar_content">
+    <div class="page">
+        <!-- Main Content -->
+        <section class="container">
+            <nav class="navbar">
+                <div class="navbar__content">
+                    <img src="" alt="">
+                    <ul>
+                        <li><a href="#">EXCLUSIVOS</a></li>
+                        <li><a href="#">NUEVOS</a></li>
+                        <li><a href="#">GIFT CARDS</a></li>
+                        <li><a href="#">FIND A STORE</a></li>
+                    </ul>
+                </div>
+            </nav>
+             <section class="main-content">
+                 <!-- <p>Diseña tu</p>
+                 <h1>Súper Héroe!</h1> -->
+                 <h1><span>Diseña tu</span> Súper Héroe!</h1>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum alias molestiae illum pariatur itaque numquam, ab voluptates modi nisi cumque magni ad possimus voluptatibus repudiandae dicta laudantium natus fugiat laboriosam?</p>
+             </section>
+             <section class="side-content">
+                <p>Superman</p>
                 <img src="" alt="">
-                <ul>
-                    <li><a href="">EXCLUSIVOS</a></li>
-                    <li><a href="">NUEVOS</a></li>
-                    <li><a href=""></a>GIFT CARDS</li>
-                    <li><a href=""></a>FIND A STORE</li>
-                </ul>
-            </div>
-        </nav>
-
-        <section class="main-content">
-            <p>Diseña tu</p>
-            <h1>Súper Héore!</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus consequatur incidunt delectus eius exercitationem odio, velit est ipsum autem natus, praesentium a non deserunt fuga, enim dolore iste necessitatibus odit?</p>
+                <div></div>
+             </section>
+             <section>
+                 <div>
+                     <img src="" alt="">
+                 </div>
+                 <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+             </section>
         </section>
-
-        <section class="side-content">
-            <p>Superman</p>
-            <img src="" alt="">
-            <div></div>
-        </section>
-
-        <section>
-            <div>
-                <img src="" alt="">
-            </div>
-            <div>
-                <img src="" alt="">
-            </div>
-            <div>
-                <img src="" alt="">
-            </div>
-        </section>
-    </section>
-    <!-- loader -->
-    <section class="loader">
-        <div></div>
-        <div></div>
-        <div></div>
-    </section>
-    <!-- modal -->
-    <section></section>
+         <!-- Loader -->
+         <section class="loader">
+             <div></div>
+             <div></div>
+             <div></div>
+         </section>
+        <!-- Modal -->
+        <section></section>
+    </div>
 </body>
 </html>
